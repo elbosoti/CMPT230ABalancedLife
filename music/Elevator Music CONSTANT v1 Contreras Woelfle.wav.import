@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r78jx8jjqwrr"
+path="res://.godot/imported/Elevator Music CONSTANT v1 Contreras Woelfle.wav-446c14155c01dc86418640a363073149.sample"
+
+[deps]
+
+source_file="res://music/Elevator Music CONSTANT v1 Contreras Woelfle.wav"
+dest_files=["res://.godot/imported/Elevator Music CONSTANT v1 Contreras Woelfle.wav-446c14155c01dc86418640a363073149.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

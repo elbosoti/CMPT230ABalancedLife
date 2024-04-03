@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1uc50g5cq43y"]
+
+[ext_resource type="Texture2D" uid="uid://qsvjbwex4omy" path="res://art/backgrounds/Kitchen.png" id="1_i5ftp"]
+[ext_resource type="Script" path="res://levels/kitchen.gd" id="1_uk5v3"]
+[ext_resource type="Texture2D" uid="uid://1lo5m13ypjo7" path="res://art/objects/doorpixel.png" id="2_cvt25"]
+[ext_resource type="Texture2D" uid="uid://f8ss083s2xsl" path="res://art/objects/wallclock.png" id="4_h8mok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea2ak"]
+size = Vector2(25.6989, 45.6989)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tao65"]
+
+[node name="Kitchen" type="Node2D"]
+scale = Vector2(4.65, 4.65)
+script = ExtResource("1_uk5v3")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_i5ftp")
+centered = false
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(55.7527, 45.9677)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ea2ak")
+
+[node name="DoorSprite" type="Sprite2D" parent="Door"]
+position = Vector2(55.914, 45.8064)
+texture = ExtResource("2_cvt25")
+
+[node name="Clock" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clock"]
+position = Vector2(223.441, 21.0753)
+shape = SubResource("CircleShape2D_tao65")
+
+[node name="ClockSprite" type="Sprite2D" parent="Clock"]
+position = Vector2(223.441, 21.5054)
+texture = ExtResource("4_h8mok")
+
+[connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
+[connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
+[connection signal="mouse_exited" from="Door" to="." method="_on_door_mouse_exited"]
+[connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
+[connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
