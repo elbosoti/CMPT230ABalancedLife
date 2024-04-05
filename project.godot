@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="A Balanced Life"
-run/main_scene="res://levels/Bedroom.tscn"
+run/main_scene="res://levels/living_room.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackgroundMusic="*res://levels/background_music.gd"
 
 [display]
 
@@ -22,4 +26,5 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="mobile"

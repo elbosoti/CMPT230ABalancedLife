@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5lyape2u1scl"]
+
+[ext_resource type="Script" path="res://levels/living_room.gd" id="1_7auqw"]
+[ext_resource type="Texture2D" uid="uid://chhrptffeckt8" path="res://art/backgrounds/livingroom.png" id="2_vy3d2"]
+[ext_resource type="Texture2D" uid="uid://1lo5m13ypjo7" path="res://art/objects/doorpixel.png" id="3_peca5"]
+[ext_resource type="Texture2D" uid="uid://fnj0cmt0ksgn" path="res://art/objects/geenie2.png" id="4_6lyf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o15j5"]
+size = Vector2(25.1111, 45.7778)
+
+[node name="LivingRoom" type="Node2D"]
+scale = Vector2(4.5, 4.5)
+script = ExtResource("1_7auqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vy3d2")
+centered = false
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(36.7778, 43.7778)
+shape = SubResource("RectangleShape2D_o15j5")
+
+[node name="DoorSprite" type="Sprite2D" parent="Door"]
+position = Vector2(36.6667, 43.7778)
+texture = ExtResource("3_peca5")
+
+[node name="Geenie" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.611765)
+position = Vector2(231.556, 34.4444)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_6lyf8")
+
+[connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
+[connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
+[connection signal="mouse_exited" from="Door" to="." method="_on_door_mouse_exited"]

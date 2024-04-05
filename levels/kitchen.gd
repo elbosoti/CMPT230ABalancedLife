@@ -28,4 +28,11 @@ func _on_clock_mouse_entered():
 
 func _on_door_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		get_tree().change_scene_to_file("res://levels/Bedroom.tscn")
+		get_tree().change_scene_to_file("res://levels/living_room.tscn")
+
+
+func _on_clock_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		BackgroundMusic.stream = preload("res://music/Elevator Music SPED UP v1 Contreras Woelfle.wav")
+		BackgroundMusic.play()
+		BackgroundMusic.player_texture = preload("res://art/objects/geenie2.png")

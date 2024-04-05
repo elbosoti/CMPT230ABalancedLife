@@ -22,7 +22,6 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(55.7527, 45.9677)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ea2ak")
 
 [node name="DoorSprite" type="Sprite2D" parent="Door"]
@@ -42,5 +41,7 @@ texture = ExtResource("4_h8mok")
 [connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
 [connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
 [connection signal="mouse_exited" from="Door" to="." method="_on_door_mouse_exited"]
+[connection signal="input_event" from="Clock" to="." method="_on_clock_input_event"]
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
+[connection signal="child_entered_tree" from="Clock/ClockSprite" to="." method="_on_clock_sprite_child_entered_tree"]
